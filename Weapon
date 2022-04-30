@@ -1,0 +1,38 @@
+/**
+* name: Stefany
+* date 2022-04-29
+* description: weapon class extends to items. This consists of guns
+*/
+public class Weapon extends Item {
+  private double damage;
+  private double killAward;
+  private int fireate;
+  private double headshotMulti;
+
+  //weapons
+  public Weapon (double cost, String name, double killAward, double damage, int fireate, double headshotMulti) {
+    super(cost, name);
+    this.killAward = killAward;
+    this.damage = damage;
+    this.fireate = fireate;
+    this.headshotMulti = headshotMulti;
+  }
+
+  //getters
+    public double getDamage() {
+    return this.damage;
+  }
+  public double getKillAward() {
+    return this.killAward;
+  }
+  public int fireate() {
+    return this.fireate;
+  }
+  public boolean headshotMulti() {
+    return this.headshotMulti;
+  }
+  //shooting the other team
+  // public void shoot() {
+  //   get.enemyHP = get.enemyHP - getDamage;
+  // }
+}
