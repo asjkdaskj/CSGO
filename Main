@@ -1,6 +1,18 @@
 import java.io.*;
 class Main {
   public static void main(String[] args) {
+    //first, making the maps of the game
+    //for this program, we will only add the 7 competitive maps 
+    //each map has 7 attributes, one for the name of the map, 5 for common map positions almost every map has, and one unique callout for each map
+    //note that Nuke is the only map without a mid, so instead we will put Outside as a callout because it is the largest spot of the map
+    Map dust2 = new Map ("Dust II", "TSpawn" , "CTSpawn", "ABombsite", "BBombsite", "Mid", "Long");
+    Map mirage = new Map ("Mirage", "TSpawn" , "CTSpawn", "ABombsite", "BBombsite", "Mid", "Underpass");
+    Map inferno = new Map ("Inferno", "TSpawn" , "CTSpawn", "ABombsite", "BBombsite", "Mid", "Banana");
+    Map overpass = new Map ("Overpass", "TSpawn" , "CTSpawn", "ABombsite", "BBombsite", "Mid", "Washrooms");
+    Map vertigo = new Map ("Vertigo", "TSpawn" , "CTSpawn", "ABombsite", "BBombsite", "Mid", "Element");
+    Map ancient = new Map ("Ancient", "TSpawn" , "CTSpawn", "ABombsite", "BBombsite", "Mid", "Donut");
+    Map nuke = new Map ("Nuke", "TSpawn" , "CTSpawn", "ABombsite", "BBombsite", "Outside", "Secret");
+    
     //the costs/kill costs are the casual costs
     Weapon usp = new Weapon (200, "Usp-s", 300, 17, 353, 2);
     Weapon glock = new Weapon (200, "Glock-18", 300, 14, 400, 2);
