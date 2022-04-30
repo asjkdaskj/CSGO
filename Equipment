@@ -1,0 +1,15 @@
+/**
+* name: Stefany
+* date 2022-04-29
+* description: equipment 
+*/
+public class Equipment extends Item {
+
+  public Equipment (double cost, String name) {
+    super(cost, name);
+  }
+
+  public void useKit() {
+    //use kit idk defusedbomb = true
+  }
+}
