@@ -35,4 +35,8 @@ public class Weapon extends Item {
   // public void shoot() {
   //   get.enemyHP = get.enemyHP - getDamage;
   // }
+    public String toString() {
+		return "\ndamage: " + damage + "\nkillAward: " + killAward + "\nfireate: " + fireate + "\nheadshotMulti" + headshotMulti;
+	}
+
 }
