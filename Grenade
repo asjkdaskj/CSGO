@@ -35,4 +35,7 @@ public class Grenade extends Item {
     public double getDamage() {
     return this.damage;
   }
+  public String toString() {
+		return "\nenemiesFlashed: " + enemiesFlashed + "\ndamage: " + damage + "\nkillAward" + killAward;
+	}
 }
