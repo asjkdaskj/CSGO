@@ -12,7 +12,7 @@ public class Round{
   private int tsAlive;
   private int ctsAlive;
 
-  public Round(boolean isBombPlanted,boolean isBombDefused, boolean isTimeRunOut,boolean ctWin, boolean tWin,int tsAlive, int ctsAlive){
+  public Round(boolean isBombPlanted,boolean isBombDefused, boolean isTimeRunOut, boolean ctWin, boolean tWin, int tsAlive, int ctsAlive){
     this.isBombPlanted=isBombPlanted;
     this.isBombDefused=isBombDefused;
     this.isTimeRunOut=isTimeRunOut;
@@ -49,5 +49,8 @@ public class Round{
   }
   public void defuse(){
     this.isBombDefused=true;
+  }
+  public String toString(){
+    return "Bomb Planted: "+ this.isBombPlanted+"\n Bomb Defused: "+ this.isBombDefused+"\n Time RunOut: "+this.isTimeRunOut+ "\nctWin: "+this.ctWin+"\ntWin: "+this.tWin+"\ntsAlive: "+this.tsAlive+"\nctsAlive: "+this.ctsAlive;
   }
 }
