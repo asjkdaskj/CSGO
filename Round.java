@@ -12,14 +12,14 @@ public class Round{
   private int tsAlive;
   private int ctsAlive;
 
-  public Round(boolean isBombPlanted,boolean isBombDefused, boolean isTimeRunOut, boolean ctWin, boolean tWin, int tsAlive, int ctsAlive){
-    this.isBombPlanted=isBombPlanted;
-    this.isBombDefused=isBombDefused;
-    this.isTimeRunOut=isTimeRunOut;
-    this.ctWin=ctWin;
-    this.tWin=tWin;
-    this.tsAlive=tsAlive;
-    this.ctsAlive=ctsAlive;
+  public Round() {
+    this.isBombPlanted=false;
+    this.isBombDefused=false;
+    this.isTimeRunOut=false;
+    this.ctWin=false;
+    this.tWin=false;
+    this.tsAlive=5;
+    this.ctsAlive=5;
   }
 
   public boolean getIsBombPlanted(){
