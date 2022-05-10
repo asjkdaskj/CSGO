@@ -11,34 +11,35 @@ public class Player{
    private int deaths;
    private boolean isAlive;
    private double utilDamage;
-   private double enemiesFlashed;
    private double adr;
    private boolean hasKit;
    private boolean isT;
    private boolean isCt;
    private double armorlvl;
-   private boolean hasHelmut;
+   private boolean hasHelmet;
    private double hp;
    private double money;
    private double hsPercent;
+   private int skill;
+   private Coordinates PlayerCoordinates;
    
-   public Player(String username,int kills, int assists,boolean isAlive,double utilDamage,double enemiesFlashed, double adr, boolean hasKit, boolean isT, double armorlvl, boolean hasHelmut, double hp,double money, double hsPercent){
+   public Player(String username,int kills, int assists,boolean isAlive,double utilDamage, double adr, boolean hasKit, boolean isT, double armorlvl, boolean hasHelmet, double hp,double money, double hsPercent, int skill){
       this.kills=kills;
       this.username=username;
       this.assists=assists;
       this.deaths=deaths;
       this.isAlive=isAlive;
       this.utilDamage=utilDamage;
-      this.enemiesFlashed=enemiesFlashed;
       this.adr=adr;
       this.hasKit=hasKit;
       this.isT=isT;
       this.isCt=isCt;
       this.armorlvl=armorlvl;
-      this.hasHelmut=hasHelmut;
+      this.hasHelmet=hasHelmet;
       this.hp=hp;
       this.money=money;
       this.hsPercent=hsPercent;
+      this.skill=skill;
    }
    
    public String getUsername(){
@@ -56,9 +57,6 @@ public class Player{
    public double getUtilDamage(){
       return this.utilDamage;
    }
-   public double getEnemiesFlashed(){
-      return this.enemiesFlashed;
-   }
    public double getAdr(){
       return this.adr;
    }
@@ -74,8 +72,8 @@ public class Player{
    public boolean getIsCt(){
       return this.isCt;
    }
-   public boolean getHasHelmut(){
-      return this.hasHelmut;
+   public boolean getHasHelmet(){
+      return this.hasHelmet;
    }
    public double getHp(){
       return this.hp;
@@ -85,6 +83,9 @@ public class Player{
    }
    public double gethsPercent(){
       return this.hsPercent;
+   }
+  public int skill(){
+      return this.skill;
    }
 
 
@@ -99,7 +100,7 @@ public class Player{
    }
    
    public String toString(){
-      return "Username: "+this.username+"\nKills: "+this.kills+ "\nAssists: "+this.assists+"\nDeaths: "+this.deaths+"\nAlive?: "+this.isAlive+"\nutilDamage: "+this.utilDamage+"\nEnemies Flashed: "+this.enemiesFlashed+"\nadr:"+this.adr+"\nhasKit: "+this.hasKit+"\nisT: "+this.isT+"\nisCt: "+this.isCt+"\narmorlvl: "+this.armorlvl+"\nhas helmut: "+this.hasHelmut+"\nhp: "+this.hp+"\nmoney: "+this.money+"\nhsPercent: "+this.hsPercent;
+      return "Username: "+this.username+"\nKills: "+this.kills+ "\nAssists: "+this.assists+"\nDeaths: "+this.deaths+"\nAlive?: "+this.isAlive+"\nutilDamage: "+this.utilDamage+"\nadr:"+this.adr+"\nhasKit: "+this.hasKit+"\nisT: "+this.isT+"\nisCt: "+this.isCt+"\narmorlvl: "+this.armorlvl+"\nhas helmet: "+this.hasHelmet+"\nhp: "+this.hp+"\nmoney: "+this.money+"\nhsPercent: "+this.hsPercent+"\nskill: "+skill;
    }
 
 }
