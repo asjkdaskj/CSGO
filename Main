@@ -1,5 +1,5 @@
-import java.io.*;
-class Main {
+import java.util.Scanner;
+public class Main {
   public static void main(String[] args) {
     //first, making the maps of the game
     //for this program, we will only add the 7 competitive maps 
@@ -12,30 +12,326 @@ class Main {
     Map vertigo = new Map ("Vertigo", "TSpawn" , "CTSpawn", "ABombsite", "BBombsite", "Mid", "Element");
     Map ancient = new Map ("Ancient", "TSpawn" , "CTSpawn", "ABombsite", "BBombsite", "Mid", "Donut");
     Map nuke = new Map ("Nuke", "TSpawn" , "CTSpawn", "ABombsite", "BBombsite", "Outside", "Secret");
+
+    Player s1mple = new Player (100, "S1mple", true, 100);
     
     //the costs/kill costs are the casual costs
-    Weapon usp = new Weapon (200, "Usp-s", 300, 17, 353, 2);
-    Weapon glock = new Weapon (200, "Glock-18", 300, 14, 400, 2);
-    Weapon deagle = new Weapon (700, "Desert Eagle", 300, 53, 267, 3);
-    Weapon mag7 = new Weapon (1300, "Mag-7", 900, 150, 70, 1.5);
-    Weapon sawedoff = new Weapon (1100, "Sawed-Off", 900, 160, 70, 1.5);
-    Weapon xm1014 = new Weapon (2000, "XM-1014", 900, 110, 171, 1.5);
-    Weapon mp9 = new Weapon (1250, "Mp-9", 600, 15, 857, 2);
-    Weapon mac10 = new Weapon (1050, "Mac-10", 600, 16, 800, 2);
-    Weapon p90 = new Weapon (2350, "P90", 300, 20, 857, 2);
-    Weapon m4 = new Weapon (2900, "M4a1-s", 300, 29, 600, 3);
-    Weapon ak = new Weapon (2700, "AK-47", 300, 28, 600, 5);
-    Weapon awp = new Weapon (4750, "AWP", 100, 115, 41, 5);
+    //declaring the weapons
+    Weapon usp = new Weapon (200, "Usp-s", 300, 17, 353, 2, false, false);
+    Weapon glock = new Weapon (200, "Glock-18", 300, 14, 400, 2, false, true);
+    Weapon deagle = new Weapon (700, "Desert Eagle", 300, 53, 267, 3, false, false);
+    Weapon mag7 = new Weapon (1300, "Mag-7", 900, 150, 70, 1.5, true, false);
+    Weapon sawedoff = new Weapon (1100, "Sawed-Off", 900, 160, 70, 1.5, true, false);
+    Weapon xm1014 = new Weapon (2000, "XM-1014", 900, 110, 171, 1.5, true, false);
+    Weapon mp9 = new Weapon (1250, "Mp-9", 600, 15, 857, 2, false, false);
+    Weapon mac10 = new Weapon (1050, "Mac-10", 600, 16, 800, 2, false, false);
+    Weapon p90 = new Weapon (2350, "P90", 300, 20, 857, 2, false, false);
+    Weapon m4 = new Weapon (2900, "M4a1-s", 300, 29, 600, 3, false, false);
+    Weapon ak = new Weapon (2700, "AK-47", 300, 28, 600, 5, false, false);
+    Weapon awp = new Weapon (4750, "AWP", 100, 115, 41, 5, false, false);
 
-    Equipment helmetandkevlar = new Equipment (1000, "Helmet and Kevlar");
-    Equipment kevlar = new Equipment (650, "Kevlar");
-    Equipment kit = new Equipment (200, "kit");
+    //declaring equipment
+    Equipment helmetandkevlar = new Equipment (1000, "Helmet and Kevlar", false);
+    Equipment kevlar = new Equipment (650, "Kevlar", false);
+    Equipment kit = new Equipment (400, "kit", false);
 
-    Grenade hegrenade = new Grenade (300, "HE Grenade", 300, 60);
-    Grenade flashbang = new Grenade (200, "Flashbang", 300, 1);
-    Grenade smokegrenade = new Grenade (300, "Smoke Grenade", 300, 1);
-    Grenade molotov = new Grenade (400, "Molotov", 300, 80);
-    Grenade incendiarygrenade = new Grenade (600, "Incendiary Grenade", 300, 80);
-    Grenade decoygrenade = new Grenade (50, "Decoy Grenade", 300, 1);
-  }
-} 
+    //declaring grenades
+    Grenade hegrenade = new Grenade (300, "HE Grenade", 300, 60, false);
+    Flashbang flashbang = new Flashbang (200, "Flashbang", 300, 1, false);
+    Grenade smokegrenade = new Grenade (300, "Smoke Grenade", 300, 1, false, false);
+    Grenade molotov = new Grenade (400, "Molotov", 300, 80, false);
+    Grenade incendiarygrenade = new Grenade (600, "Incendiary Grenade", 300, 80, false);
+    Grenade decoygrenade = new Grenade (50, "Decoy Grenade", 300, 1, false);
+		Player player = new Player(1000000);
+		double playerMoney = player.getMoney();
+		while (true) {
+
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Welcome to CSGO TEXT ONLY");
+			System.out.println("pick one");
+			System.out.println("(1) buy items");
+			System.out.println("(2) play");
+
+			int input;
+			int buy;
+			input = sc.nextInt();
+			while (true) {
+				if (input == 1) {
+
+					System.out.println("you have $" + player.getMoney());
+					System.out.println("pick a category");
+					System.out.println("(1) pistols");
+					System.out.println("(2) heavy");
+					System.out.println("(3) SMGs");
+					System.out.println("(4) rifles");
+					System.out.println("(5) gear");
+					System.out.println("(6) grenades");
+					System.out.println("(0) back");
+					// Read a line from the user
+
+					input = sc.nextInt();
+
+					if (input == 1) {
+						System.out.println("you have $" + player.getMoney());
+						System.out.println("choose a pistol you want to buy");
+						System.out.println("(1) Glock-18: $200");
+						System.out.println("(2) Desert Eagle: $700");
+						System.out.println("(0) back");
+						buy = sc.nextInt();
+						if (buy == 1) {
+							if (player.getMoney() < glock.getCost()) {
+								System.out.println("you don't have enough money");
+								return;
+							} else {
+
+								playerMoney = player.getMoney() - glock.getCost();
+								// glock.getIsBought() = true;
+
+								System.out.println("you have $" + playerMoney + " left");
+								return;
+							}
+						}
+
+						if (buy == 2) {
+							if (player.getMoney() < deagle.getCost()) {
+								System.out.println("you don't have enough money");
+
+							} else {
+								playerMoney = player.getMoney() - deagle.getCost();
+								// deagle.getIsBought = true;
+								System.out.println("you have $" + playerMoney + " left");
+								return;
+							}
+						}
+						if (buy == 0) {
+
+						}
+					}
+
+					if (input == 2) {
+						System.out.println("you have $" + player.getMoney());
+						System.out.println("choose a heavy you want to buy");
+						System.out.println("(1) Sawed Off: $1100");
+						System.out.println("(2) XM-1014: $2000");
+						System.out.println("(0) back");
+						buy = sc.nextInt();
+						if (buy == 1) {
+							if (player.getMoney() < sawedoff.getCost()) {
+								System.out.println("you don't have enough money");
+							} else {
+								playerMoney = player.getMoney() - sawedoff.getCost();
+								System.out.println("you have $" + playerMoney + " left");
+								// sawedOff.getIsBought = true;
+								return;
+							}
+						}
+						if (buy == 2) {
+							if (player.getMoney() < xm1014.getCost()) {
+								System.out.println("you don't have enough money");
+							} else {
+								playerMoney = player.getMoney() - xm1014.getCost();
+								// xm1014.getIsBought = true;
+								System.out.println("you have $" + playerMoney + " left");
+								return;
+							}
+						}
+
+						if (buy == 0) {
+							return;
+						}
+					}
+
+					if (input == 3) {
+
+						System.out.println("you have $" + player.getMoney());
+						System.out.println("choose a SMG you want to buy");
+						System.out.println("(1) Mac-10: $1050");
+						System.out.println("(2) P90: $2350");
+						System.out.println("(0) back");
+						buy = sc.nextInt();
+						if (buy == 1) {
+							if (player.getMoney() < mac10.getCost()) {
+								System.out.println("you don't have enough money");
+							} else {
+								playerMoney = player.getMoney() - mac10.getCost();
+								System.out.println("you have $" + playerMoney + " left");
+								return;
+							}
+						}
+						if (buy == 2) {
+							if (player.getMoney() < p90.getCost()) {
+								System.out.println("you don't have enough money");
+							} else {
+								playerMoney = player.getMoney() - p90.getCost();
+								System.out.println("you have $" + playerMoney + " left");
+								return;
+							}
+						}
+
+						if (buy == 0) {
+							return;
+						}
+					}
+
+					if (input == 4) {
+						System.out.println("you have $" + player.getMoney());
+						System.out.println("choose a Rifle you want to buy");
+						System.out.println("(1) AK-47: $2700");
+						System.out.println("(2) AWP: $4750");
+						System.out.println("(0) back");
+
+						buy = sc.nextInt();
+						if (buy == 1) {
+							if (player.getMoney() < ak47.getCost()) {
+								System.out.println("you don't have enough money");
+							} else {
+								playerMoney = player.getMoney() - ak47.getCost();
+								System.out.println("you have $" + playerMoney + " left");
+								return;
+							}
+						}
+						if (buy == 2) {
+							if (player.getMoney() < awp.getCost()) {
+								System.out.println("you don't have enough money");
+							} else {
+								playerMoney = player.getMoney() - awp.getCost();
+								System.out.println("you have $" + playerMoney + " left");
+								return;
+							}
+						}
+
+						if (buy == 0) {
+							return;
+						}
+					}
+
+					if (input == 5) {
+						System.out.println("you have $" + player.getMoney());
+						System.out.println("choose an equipment you want to buy");
+						System.out.println("(1) Helmet and Kevlar: $1000");
+						System.out.println("(2) Kevlar: $650");
+						System.out.println("(3) kit: $400");
+						System.out.println("(0) back");
+
+						buy = sc.nextInt();
+						if (buy == 1) {
+							if (player.getMoney() < helmetandkevlar.getCost()) {
+								System.out.println("you don't have enough money");
+							} else {
+								playerMoney = player.getMoney() - helmetandkevlar.getCost();
+								System.out.println("you have $" + playerMoney + " left");
+								return;
+							}
+						}
+
+						if (buy == 2) {
+							if (player.getMoney() < kevlar.getCost()) {
+								System.out.println("you don't have enough money");
+							} else {
+								playerMoney = player.getMoney() - kevlar.getCost();
+								System.out.println("you have $" + playerMoney + " left");
+								return;
+							}
+						}
+						if (buy == 3) {
+							if (player.getMoney() < kit.getCost()) {
+								System.out.println("you don't have enough money loser");
+							} else {
+								playerMoney = player.getMoney() - kit.getCost();
+								System.out.println("you have $" + playerMoney + " left");
+								return;
+							}
+						}
+						if (buy == 0) {
+							return;
+						}
+					}
+
+					if (input == 6) {
+						System.out.println("you have $" + player.getMoney());
+						System.out.println("choose a grenade you want to buy");
+						System.out.println("(1) HE Grenade: $300");
+						System.out.println("(2) Flashbang: $200");
+						System.out.println("(3) Smoke Grenade: $300");
+						System.out.println("(4) Molotov: $400");
+						System.out.println("(5) Incendiary Grenade: $600");
+						System.out.println("(6) Decoy Grenade: $50");
+						System.out.println("(0) back");
+						buy = sc.nextInt();
+
+						if (buy == 1) {
+							if (player.getMoney() < hegrenade.getCost()) {
+								System.out.println("you don't have enough money");
+							} else {
+								playerMoney = player.getMoney() - hegrenade.getCost();
+								System.out.println("you have $" + playerMoney + " left");
+								return;
+							}
+						}
+
+						if (buy == 2) {
+							if (player.getMoney() < flashbang.getCost()) {
+								System.out.println("you don't have enough money");
+							} else {
+								playerMoney = player.getMoney() - flashbang.getCost();
+								System.out.println("you have $" + playerMoney + " left");
+								return;
+							}
+						}
+
+						if (buy == 3) {
+							if (player.getMoney() < smokegrenade.getCost()) {
+								System.out.println("you don't have enough money loser");
+							} else {
+								playerMoney = player.getMoney() - smokegrenade.getCost();
+								System.out.println("you have $" + playerMoney + " left");
+								return;
+							}
+						}
+
+						if (buy == 4) {
+							if (player.getMoney() < molotov.getCost()) {
+								System.out.println("you don't have enough money loser");
+							} else {
+								playerMoney = player.getMoney() - molotov.getCost();
+								System.out.println("you have $" + playerMoney + " left");
+								return;
+							}
+						}
+
+						if (buy == 5) {
+							if (player.getMoney() < incendiary.getCost()) {
+								System.out.println("you don't have enough money loser");
+							} else {
+								playerMoney = player.getMoney() - incendiary.getCost();
+								System.out.println("you have $" + playerMoney + " left");
+								return;
+							}
+						}
+
+						if (buy == 6) {
+							if (player.getMoney() < decoygrenade.getCost()) {
+								System.out.println("you don't have enough money loser");
+							} else {
+								playerMoney = player.getMoney() - decoygrenade.getCost();
+								System.out.println("you have $" + playerMoney + " left");
+								return;
+							}
+						}
+
+						if (buy == 0) {
+							return;
+						}
+					}
+
+					if (input == 0) {
+						return;
+					} else {
+						System.out.println("sucks to suck, can you read");
+					}
+
+				}
+			}
+		}
+	}
+}
